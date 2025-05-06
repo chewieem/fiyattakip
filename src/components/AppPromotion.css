@@ -1,0 +1,246 @@
+.promotion-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 30px 0 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.app-promotion {
+  flex: 1.5;
+  background-color: #2d374a;
+  border-radius: 10px;
+  min-width: 300px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-height: 250px;
+}
+
+.company-promotion {
+  background-color: #161b25;
+  border-radius: 10px;
+  min-width: 300px;
+  max-width: 380px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-height: 250px;
+}
+
+/* Sol Taraf - Uygulama Tanıtımı */
+.app-left-content {
+  position: relative;
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  padding: 0 0 0 20px;
+}
+
+.app-info {
+  padding: 25px;
+  flex: 1;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.app-info h2 {
+  font-size: 24px;
+  margin-bottom: 1px;
+  color: white;
+  font-weight: 200;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+}
+
+.aninda-cebinde {
+  font-size: 24px;
+  background-color: #1459f5;
+  color: white;
+  font-weight: 500;
+  padding: 2px 12px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-bottom: 20px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+}
+
+.app-badges {
+  display: flex;
+  gap: 5px;
+  margin-top: 1px;
+}
+
+.app-badge img {
+  height: 38px;
+}
+
+.app-phone-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+}
+
+.app-phone-image {
+  height: 110%;
+  max-height: none;
+  margin-right: 20px;
+  position: absolute;
+  right: 20px;
+  top: -15px;
+  bottom: -15px;
+}
+
+.app-graph-bg {
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  left: auto;
+  height: 70%;
+  width: 75%;
+  object-fit: contain;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/* Sağ Taraf - Şirket Bilgileri */
+.company-info {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.company-header {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hendem-logo {
+  height: 40px;
+  margin-bottom: 3px;
+}
+
+.company-subtitle {
+  font-size: 9px;
+  color: #a7b7d0;
+  font-weight: 300;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.address-info {
+  margin-bottom: 12px;
+  flex-grow: 1;
+}
+
+.info-item {
+  display: flex;
+  color: #a7b7d0;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.info-icon, .mail-icon {
+  color: #a7b7d0;
+  margin-right: 8px;
+  font-size: 14px;
+  min-width: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mail-icon {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-item p {
+  font-size: 12px;
+  line-height: 1.3;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #a7b7d0;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  justify-content: flex-end;
+}
+
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #1459f5;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(20, 89, 245, 0.3);
+}
+
+@media (max-width: 992px) {
+  .promotion-container {
+    flex-direction: column;
+  }
+  
+  .app-left-content {
+    flex-direction: column;
+    padding: 0;
+  }
+  
+  .app-info {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .app-info h2, .aninda-cebinde {
+    text-align: center;
+  }
+  
+  .app-phone-container {
+    text-align: center;
+    padding: 0 0 30px;
+  }
+  
+  .app-phone-image {
+    margin-right: 0;
+    height: auto;
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 576px) {
+  .app-info, .company-info {
+    padding: 30px 20px;
+  }
+  
+  .app-info h2 {
+    font-size: 28px;
+  }
+} 
