@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/fiyattakip/static/css/main.46e2c584.css",
+    "main.css": "/fiyattakip/static/css/main.1c7e2c29.css",
     "main.js": "/fiyattakip/static/js/main.0fc5334b.js",
     "static/js/453.c4e5a15f.chunk.js": "/fiyattakip/static/js/453.c4e5a15f.chunk.js",
     "index.html": "/fiyattakip/index.html",
-    "main.46e2c584.css.map": "/fiyattakip/static/css/main.46e2c584.css.map",
+    "main.1c7e2c29.css.map": "/fiyattakip/static/css/main.1c7e2c29.css.map",
     "main.0fc5334b.js.map": "/fiyattakip/static/js/main.0fc5334b.js.map",
     "453.c4e5a15f.chunk.js.map": "/fiyattakip/static/js/453.c4e5a15f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.46e2c584.css",
+    "static/css/main.1c7e2c29.css",
     "static/js/main.0fc5334b.js"
   ]
 }
