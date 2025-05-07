@@ -5,14 +5,18 @@ import Header from './components/Header';
 import CategoryButtons from './components/CategoryButtons';
 import Banner from './components/Banner';
 import MarketCards from './components/MarketCards';
+import LivePriceTable from './components/LivePriceTable';
 import AppPromotion from './components/AppPromotion';
 import Footer from './components/Footer';
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [showLiveTable, setShowLiveTable] = useState(true);
 
   const handleCategoryChange = (categoryId) => {
     setSelectedCategory(categoryId);
+    
+    setShowLiveTable(categoryId === 1);
   };
 
   return (
@@ -22,7 +26,13 @@ function App() {
         <div className="main-content">
           <CategoryButtons onCategoryChange={handleCategoryChange} />
           <Banner />
-          <MarketCards selectedCategory={selectedCategory} />
+          
+          {showLiveTable ? (
+            <LivePriceTable />
+          ) : (
+            <MarketCards selectedCategory={selectedCategory} />
+          )}
+          
           <AppPromotion />
         </div>
         <Footer />
