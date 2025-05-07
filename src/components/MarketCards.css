@@ -251,22 +251,22 @@
   }
 }
 
-/* Kapalı Çarşı için tablo formatı stilleri */
+/* Kaydırılabilir tablo için genel container */
 .price-table-container {
-  margin: 30px 0;
-  background-color: #161b25;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   width: 100%;
+  overflow-x: auto; /* Yatay kaydırmayı etkinleştir */
+  -webkit-overflow-scrolling: touch; /* Mobil cihazlarda daha iyi kaydırma deneyimi */
+  position: relative;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
 }
 
-/* Yeni tablo yapısı */
 .price-table-content {
-  background-color: #161b25;
-  padding: 15px;
-  width: 100%;
-  overflow-x: auto;
+  min-width: 900px; /* Mobil ekranlarda yatay kaydırma için minimum genişlik */
+  background-color: #1a2035;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .price-table-columns {
@@ -512,6 +512,26 @@
   
   .price-value {
     font-size: 11px;
+  }
+
+  .price-table-container {
+    margin: 10px -15px; /* Ekranın tam genişliğini kullanması için negatif margin */
+    border-radius: 0;
+    box-shadow: none;
+  }
+  
+  .price-table-container:after {
+    content: "← Kaydırın →";
+    display: block;
+    text-align: center;
+    padding: 8px;
+    color: #8697b3;
+    font-size: 12px;
+    background-color: rgba(26, 32, 53, 0.7);
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
   }
 }
 

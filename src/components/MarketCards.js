@@ -8,12 +8,12 @@ function MarketCards({ selectedCategory }) {
   const allMarkets = [
     {
       id: 1,
-      title: 'ALTIN',
+      title: 'GRAM ALTIN',
       timeInfo: '15 : 00 / Dün',
       alis: '3.035,46',
       satis: '3.035,46',
-      icon: '/images/prices/gold.png',
-      logo: '/images/companies/big-saglamoglu.svg',
+      icon: `${process.env.PUBLIC_URL}/images/prices/gold.png`,
+      logo: `${process.env.PUBLIC_URL}/images/companies/big-saglamoglu.svg`,
       category: 1 // Kapalı Çarşı
     },
     {
@@ -22,8 +22,8 @@ function MarketCards({ selectedCategory }) {
       timeInfo: '15 : 00 / Dün',
       alis: '3.035,46',
       satis: '3.035,46',
-      icon: '/images/prices/silver.png',
-      logo: '/images/companies/ahlatcı.png',
+      icon: `${process.env.PUBLIC_URL}/images/prices/silver.png`,
+      logo: `${process.env.PUBLIC_URL}/images/companies/ahlatcı.png`,
       category: 1 // Kapalı Çarşı
     },
     {
@@ -32,8 +32,8 @@ function MarketCards({ selectedCategory }) {
       timeInfo: '15 : 00 / Dün',
       alis: '3.035,46',
       satis: '3.035,46',
-      icon: '/images/prices/dolar.png',
-      logo: '/images/companies/harem.png',
+      icon: `${process.env.PUBLIC_URL}/images/prices/dolar.png`,
+      logo: `${process.env.PUBLIC_URL}/images/companies/harem.png`,
       category: 4 // Döviz Büroları
     },
     {
@@ -42,28 +42,28 @@ function MarketCards({ selectedCategory }) {
       timeInfo: '15 : 00 / Dün',
       alis: '3.035,46',
       satis: '3.035,46',
-      icon: '/images/prices/euro.png',
-      logo: '/images/companies/demas.png',
+      icon: `${process.env.PUBLIC_URL}/images/prices/euro.png`,
+      logo: `${process.env.PUBLIC_URL}/images/companies/demas.png`,
       category: 4 // Döviz Büroları
     },
     {
       id: 5,
-      title: 'ZİYNET',
+      title: 'ÇEYREK ALTIN',
       timeInfo: '15 : 00 / Dün',
       alis: '3.035,46',
       satis: '3.035,46',
-      icon: '/images/prices/ziynet.png',
-      logo: '/images/companies/rona.png',
+      icon: `${process.env.PUBLIC_URL}/images/prices/ziynet.png`,
+      logo: `${process.env.PUBLIC_URL}/images/companies/rona.png`,
       category: 1 // Kapalı Çarşı
     },
     {
       id: 6,
-      title: 'COIN',
+      title: 'BTC USDT',
       timeInfo: '15 : 00 / Dün',
       alis: '3.035,46',
       satis: '3.035,46',
-      icon: '/images/prices/coin.png',
-      logo: '/images/companies/hakan.png',
+      icon: `${process.env.PUBLIC_URL}/images/prices/coin.png`,
+      logo: `${process.env.PUBLIC_URL}/images/companies/hakan.png`,
       category: 2 // E-Ticaret
     }
   ];
@@ -87,12 +87,12 @@ function MarketCards({ selectedCategory }) {
 
   // Firma logoları
   const companyLogos = [
-    { id: 1, logo: '/images/companies/demas.png', name: 'demas a.s.' },
-    { id: 2, logo: '/images/companies/harem.png', name: 'harem a.s.' },
-    { id: 3, logo: '/images/companies/big-saglamoglu.svg', name: 'sağlamoğlu' },
-    { id: 4, logo: '/images/companies/hakan.png', name: 'hakan a.s.' },
-    { id: 5, logo: '/images/companies/ahlatcı.png', name: 'ahlatcı a.s.' },
-    { id: 6, logo: '/images/companies/rona.png', name: 'rona a.s.' }
+    { id: 1, logo: `${process.env.PUBLIC_URL}/images/companies/demas.png`, name: 'demas a.s.' },
+    { id: 2, logo: `${process.env.PUBLIC_URL}/images/companies/harem.png`, name: 'harem a.s.' },
+    { id: 3, logo: `${process.env.PUBLIC_URL}/images/companies/big-saglamoglu.svg`, name: 'sağlamoğlu' },
+    { id: 4, logo: `${process.env.PUBLIC_URL}/images/companies/hakan.png`, name: 'hakan a.s.' },
+    { id: 5, logo: `${process.env.PUBLIC_URL}/images/companies/ahlatcı.png`, name: 'ahlatcı a.s.' },
+    { id: 6, logo: `${process.env.PUBLIC_URL}/images/companies/rona.png`, name: 'rona a.s.' }
   ];
 
   // Seçilen kategoriye göre marketleri filtreleme

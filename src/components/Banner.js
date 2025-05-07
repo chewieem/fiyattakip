@@ -3,8 +3,8 @@ import './Banner.css';
 
 function Banner() {
   return (
-    <div className="banner">
-      <img src="/images/isbankasi.png" alt="İş Bankası" className="isbankasi-banner" />
+    <div className="banner-container">
+      <img src={`${process.env.PUBLIC_URL}/images/isbankasi.png`} alt="İş Bankası" className="isbankasi-banner" />
     </div>
   );
 }

@@ -16,19 +16,19 @@ function AppPromotion() {
             
             <div className="app-badges">
               <a href="#" className="app-badge">
-                <img src="/images/footer/google-play-white.png" alt="Google Play'den İndir" />
+                <img src={`${process.env.PUBLIC_URL}/images/footer/google-play-white.png`} alt="Google Play'den İndir" />
               </a>
               <a href="#" className="app-badge">
-                <img src="/images/footer/app-store-white.png" alt="App Store'dan İndir" />
+                <img src={`${process.env.PUBLIC_URL}/images/footer/app-store-white.png`} alt="App Store'dan İndir" />
               </a>
             </div>
           </div>
           
           <div className="app-phone-container">
-            <img src="/images/footer/telefon.png" alt="Mobil Uygulama" className="app-phone-image" />
+            <img src={`${process.env.PUBLIC_URL}/images/footer/telefon.png`} alt="Mobil Uygulama" className="app-phone-image" />
           </div>
           
-          <img src="/images/footer/grafik.png" alt="Grafik" className="app-graph-bg" />
+          <img src={`${process.env.PUBLIC_URL}/images/footer/grafik.png`} alt="Grafik" className="app-graph-bg" />
         </div>
       </div>
       
@@ -36,7 +36,7 @@ function AppPromotion() {
       <div className="company-promotion">
         <div className="company-info">
           <div className="company-header">
-            <img src="/images/footer/hendem.png" alt="Hendem" className="hendem-logo" />
+            <img src={`${process.env.PUBLIC_URL}/images/footer/hendem.png`} alt="Hendem" className="hendem-logo" />
           </div>
           
           <div className="address-info">

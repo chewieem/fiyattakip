@@ -5,10 +5,10 @@ function CategoryButtons({ onCategoryChange }) {
   const [selectedCategory, setSelectedCategory] = useState(null);
   
   const categories = [
-    { id: 1, name: 'KAPALI ÇARŞI', count: 22, image: '/images/category/kapalicarsi.png' },
-    { id: 2, name: 'E-TİCARET', count: 45, image: '/images/category/eticaret.png' },
-    { id: 3, name: 'BANKALAR', count: 38, image: '/images/category/bankalar.png' },
-    { id: 4, name: 'DÖVİZ BÜROLARI', count: 52, image: '/images/category/dovizburolari.png' }
+    { id: 1, name: 'KAPALI ÇARŞI', count: 22, image: `${process.env.PUBLIC_URL}/images/category/kapalicarsi.png` },
+    { id: 2, name: 'E-TİCARET', count: 45, image: `${process.env.PUBLIC_URL}/images/category/eticaret.png` },
+    { id: 3, name: 'BANKALAR', count: 38, image: `${process.env.PUBLIC_URL}/images/category/bankalar.png` },
+    { id: 4, name: 'DÖVİZ BÜROLARI', count: 52, image: `${process.env.PUBLIC_URL}/images/category/dovizburolari.png` }
   ];
 
   const handleCategoryClick = (id) => {

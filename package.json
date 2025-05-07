@@ -2,7 +2,7 @@
   "name": "fiyat-borsasi",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://chewieem.github.io/fiyattakip/",
+  "homepage": "https://chewieem.github.io/fiyattakip",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
