@@ -193,10 +193,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+}
+
+.company-info {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .company-logo-container {
   width: 35%;
+}
+
+.company-name {
+  font-size: 11px;
+  color: #8697b3;
+  text-align: center;
+  margin-top: 5px;
+  font-weight: 500;
 }
 
 .company-logo {
@@ -265,10 +281,25 @@
   position: relative;
   -webkit-overflow-scrolling: touch;
   border: 1px solid rgba(67, 76, 95, 0.4);
+  scrollbar-width: thin;
+  scrollbar-color: #434c5f #1f242e;
+}
+
+.price-table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.price-table-container::-webkit-scrollbar-track {
+  background: #1f242e;
+}
+
+.price-table-container::-webkit-scrollbar-thumb {
+  background-color: #434c5f;
+  border-radius: 4px;
 }
 
 .price-table-content {
-  min-width: 900px;
+  min-width: 980px;
   background-color: #141824;
   border-radius: 10px;
   overflow: hidden;
@@ -297,10 +328,11 @@
   display: flex;
   gap: 3px;
   flex-grow: 1;
-  justify-content: flex-end;
+  justify-content: flex-start;
   min-width: 0;
-  margin-left: auto;
+  margin-left: 0;
   padding: 0 3px;
+  width: calc(100% - 160px);
 }
 
 .column-header {
@@ -360,15 +392,20 @@
 
 /* Şirket logosu ve fiyat kolonu */
 .company-price-column {
-  width: 190px;
+  width: 160px;
   background-color: #1f242e;
   border: 1px solid #434c5f;
   border-radius: 8px;
   margin: 0 2px;
   padding: 0;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* E-ticaret sayfası için daha dar kolonlar */
+.company-price-column.eticaret-column {
+  width: 145px;
 }
 
 /* Şirket sütunları arasındaki dikey çizgi */
@@ -463,11 +500,15 @@
 @media (max-width: 1200px) {
   .company-price-column {
     width: auto;
-    min-width: 160px;
+    min-width: 145px;
     background-color: #1f242e;
     border: 1px solid #434c5f;
     border-radius: 8px;
     margin: 0 2px;
+  }
+  
+  .company-price-column.eticaret-column {
+    min-width: 135px;
   }
   
   .product-header {
@@ -494,6 +535,10 @@
     margin: 0 1px;
     min-width: 140px;
     background-color: #1f242e !important;
+  }
+  
+  .company-price-column.eticaret-column {
+    min-width: 125px;
   }
   
   .company-logo-header,
@@ -605,6 +650,185 @@
   .product-column {
     width: 150px;
     border-radius: 6px;
+  }
+}
+
+/* Filtreleme Paneli Stilleri */
+.price-filter-panel {
+  background-color: #161b25;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.filter-header h3 {
+  margin: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.filter-controls {
+  background-color: #1f242e;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.filter-row {
+  display: flex;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 250px;
+}
+
+.filter-label {
+  color: #a7b7d0;
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8697b3;
+}
+
+.filter-input {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  border-radius: 6px;
+  border: 1px solid #434c5f;
+  background-color: #1f242e;
+  color: white;
+  font-size: 14px;
+}
+
+.filter-input::placeholder {
+  color: #8697b3;
+}
+
+.sort-select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #434c5f;
+  background-color: #1f242e;
+  color: white;
+  font-size: 14px;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238697b3' viewBox='0 0 12 12'%3E%3Cpath d='M6 9L1 4h10L6 9z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  cursor: pointer;
+}
+
+.company-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.company-filter-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 70px;
+  background-color: #1f242e;
+  border: 1px solid #434c5f;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.company-filter-item:hover {
+  background-color: #252b37;
+  transform: translateY(-2px);
+}
+
+.company-filter-item.selected {
+  border-color: #025fff;
+  background-color: rgba(2, 95, 255, 0.1);
+  box-shadow: 0 0 10px rgba(2, 95, 255, 0.3);
+}
+
+.company-filter-logo {
+  max-width: 70px;
+  max-height: 30px;
+  margin-bottom: 8px;
+}
+
+.company-filter-name {
+  font-size: 10px;
+  color: #a7b7d0;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.filter-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.filter-clear-button {
+  background-color: #2c3246;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-clear-button:hover {
+  background-color: #3d4255;
+}
+
+@media (max-width: 768px) {
+  .filter-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .filter-group {
+    width: 100%;
+  }
+  
+  .company-filter-item {
+    width: 80px;
+    height: 65px;
+  }
+  
+  .company-filter-logo {
+    max-height: 25px;
+  }
+  
+  .company-filter-name {
+    font-size: 9px;
   }
 }
 
@@ -837,11 +1061,21 @@
   .company-columns-container {
     width: fit-content;
     min-width: 100%;
+    overflow-x: auto;
   }
   
   .price-table-columns {
     width: 100%;
     flex-wrap: nowrap;
+  }
+  
+  .price-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .price-table-content {
+    min-width: 800px;
   }
 }
 
@@ -876,4 +1110,249 @@
 
 .price-changed-down {
   animation: priceChangeDown 2s ease-out;
+}
+
+/* Demaş için "En iyi fiyat" ibaresi */
+.company-price-column.demas-column {
+  position: relative;
+  z-index: 10;
+}
+
+.company-price-column.demas-column .company-logo-header:before {
+  content: "En iyi fiyat";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffbe0b;
+  color: #111;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  z-index: 3;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  width: auto;
+  min-width: 70px;
+  text-align: center;
+}
+
+/* Responsive durumlar için en iyi fiyat ibaresi */
+@media (max-width: 768px) {
+  .company-price-column.demas-column .company-logo-header:before {
+    font-size: 9px;
+    padding: 1px 4px;
+    top: -6px;
+    min-width: 60px;
+  }
+}
+
+/* Harem Altın için "Sponsorlu" ibaresi */
+.company-price-column.harem-column .company-logo-header:before {
+  content: "Sponsorlu";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #3498db;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  z-index: 3;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  width: auto;
+  min-width: 70px;
+  text-align: center;
+}
+
+/* Sağlamoğlu için "Sponsorlu" ibaresi */
+.company-price-column.saglamoglu-column .company-logo-header:before {
+  content: "Sponsorlu";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #3498db;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  z-index: 3;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  width: auto;
+  min-width: 70px;
+  text-align: center;
+}
+
+/* Responsive durumlar için Sponsorlu ibaresi */
+@media (max-width: 768px) {
+  .company-price-column.harem-column .company-logo-header:before,
+  .company-price-column.saglamoglu-column .company-logo-header:before {
+    font-size: 9px;
+    padding: 1px 4px;
+    top: -6px;
+    min-width: 60px;
+  }
+}
+
+.eticaret-column .price-label {
+  font-size: 8px;
+  margin-bottom: 1px;
+}
+
+.eticaret-column .price-value {
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .eticaret-column .price-value {
+    font-size: 11px;
+  }
+  
+  .eticaret-column .price-cell {
+    padding: 2px 4px;
+  }
+}
+
+/* E-ticaret sütunları için optimize edilmiş stiller */
+.company-filter-group {
+  width: 100%;
+}
+
+.eticaret-column .table-company-logo {
+  max-width: 80px;
+  height: auto;
+}
+
+.bank-column .table-company-logo {
+  max-height: 35px;
+  object-fit: contain;
+}
+
+/* Banka logoları için özel stiller */
+.bank-logo-png {
+  width: 120px;
+  height: auto;
+}
+
+.bank-logo-svg {
+  width: 100px;
+  height: auto;
+}
+
+/* Tablo genişliği optimizasyonu */
+@media screen and (max-width: 1200px) {
+  .eticaret-column {
+    min-width: auto !important;
+    padding: 0 5px !important;
+  }
+  
+  .eticaret-column .price-cell {
+    padding: 2px !important;
+  }
+  
+  .eticaret-column .price-value {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Sayfa geçiş animasyonları */
+.page-content {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.page-transition {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Fiyat değişim animasyonları */
+.price-decreased {
+  animation: priceDecreasedAnimation 1.5s ease-out;
+  position: relative;
+}
+
+.price-increased {
+  animation: priceIncreasedAnimation 1.5s ease-out;
+  position: relative;
+}
+
+@keyframes priceDecreasedAnimation {
+  0% { background-color: rgba(46, 204, 113, 0.3); }
+  100% { background-color: transparent; }
+}
+
+@keyframes priceIncreasedAnimation {
+  0% { background-color: rgba(231, 76, 60, 0.3); }
+  100% { background-color: transparent; }
+}
+
+.price-change-icon {
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+.price-change-icon.up {
+  color: #e74c3c;
+}
+
+.price-change-icon.down {
+  color: #2ecc71;
+}
+
+/* Firma değişim bildirimi */
+.company-changed-badge {
+  position: absolute;
+  top: -8px;
+  right: 10px;
+  background-color: #e67e22;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: badgePulse 2s infinite;
+}
+
+@keyframes badgePulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Yükleme durumu gösterimi */
+.price-table.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80px;
+}
+
+.loading-message {
+  color: #8697b3;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
 } 

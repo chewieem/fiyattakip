@@ -1,8 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CategoryButtons.css';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 function CategoryButtons({ onCategoryChange }) {
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  // URL'ye göre seçili kategoriyi ayarla
+  useEffect(() => {
+    if (location.pathname === '/kapalicarsi') {
+      setSelectedCategory(1);
+      onCategoryChange && onCategoryChange(1);
+    } else if (location.pathname === '/eticaret') {
+      setSelectedCategory(2);
+      onCategoryChange && onCategoryChange(2);
+    } else if (location.pathname === '/bankalar') {
+      setSelectedCategory(3);
+      onCategoryChange && onCategoryChange(3);
+    } else if (location.pathname === '/anasayfa') {
+      // Anasayfada seçili kategoriyi sıfırla
+      setSelectedCategory(null);
+      onCategoryChange && onCategoryChange(null);
+    }
+  }, [location.pathname, onCategoryChange]);
   
   const categories = [
     { id: 1, name: 'KAPALI ÇARŞI', count: 22, image: `${process.env.PUBLIC_URL}/images/category/kapalicarsi.png` },
@@ -12,12 +33,27 @@ function CategoryButtons({ onCategoryChange }) {
   ];
 
   const handleCategoryClick = (id) => {
-    if (selectedCategory === id) {
+    const isAlreadySelected = selectedCategory === id;
+    
+    if (isAlreadySelected) {
+      // Zaten seçili olan kategoriye tıklandığında
       setSelectedCategory(null);
       onCategoryChange && onCategoryChange(null);
+      navigate('/anasayfa');
     } else {
+      // Yeni bir kategoriye tıklandığında
       setSelectedCategory(id);
       onCategoryChange && onCategoryChange(id);
+      
+      if (id === 1) {
+        navigate('/kapalicarsi');
+      } else if (id === 2) {
+        navigate('/eticaret');
+      } else if (id === 3) {
+        navigate('/bankalar');
+      } else {
+        navigate('/anasayfa');
+      }
     }
   };
 

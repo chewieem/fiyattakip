@@ -21,7 +21,32 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
-  padding: 0 15px;
+  padding: 20px;
+  min-height: 70vh;
+}
+
+/* İçerik wrapper - sabit yükseklik */
+.content-wrapper {
+  min-height: 700px; /* Tablo ve kartlar için yeterli yükseklik */
+  margin: 20px 0;
+  position: relative;
+  overflow: visible;
+}
+
+/* Animation için stiller */
+.animated-content {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .btn {
@@ -55,4 +80,37 @@ body {
   .main-content {
     padding: 0 10px;
   }
+  
+  .content-wrapper {
+    min-height: 500px; /* Mobil için daha düşük yükseklik */
+  }
+}
+
+/* Sayfa geçiş animasyonları */
+.page-content {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* E-ticaret sütun genişlikleri */
+.eticaret-column {
+  min-width: auto !important;
+  flex: 1 !important;
+}
+
+/* Firma logoları için stil */
+.bank-logo-png {
+  width: 120px;
+  height: auto;
+}
+
+.bank-logo-svg {
+  width: 100px;
+  height: auto;
 }
